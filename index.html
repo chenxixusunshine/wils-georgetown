@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Women in Law Society — Georgetown University</title>
+<meta name="description" content="Women in Law Society at Georgetown University: mentorship, advocacy, and community for women pursuing careers in law.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper: #FAF7EF;
+    --paper-dim: #F1EBDC;
+    --ink: #12192E;
+    --ink-soft: #4A5060;
+    --oxblood: #7A1E2B;
+    --oxblood-deep: #5C1520;
+    --brass: #A9803F;
+    --line: rgba(18,25,46,0.14);
+    --max: 1120px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  h1,h2,h3, .display{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  a{ color: inherit; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+
+  @media (max-width: 640px){
+    .wrap{ padding: 0 20px; }
+    body{ font-size: 16px; }
+  }
+
+  /* ---------- Header ---------- */
+  header.site{
+    border-bottom: 1px solid var(--line);
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+    z-index: 50;
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    padding: 20px 0;
+  }
+  .brand{
+    display:flex;
+    align-items:baseline;
+    gap:10px;
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    font-size: 1.15rem;
+  }
+  .brand .mark{
+    color: var(--oxblood);
+  }
+  nav.links{
+    display:flex;
+    gap: 28px;
+    font-size: 0.95rem;
+  }
+  nav.links a{
+    text-decoration:none;
+    color: var(--ink-soft);
+    padding-bottom: 4px;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease, color .15s ease;
+  }
+  nav.links a:hover{
+    color: var(--ink);
+    border-color: var(--brass);
+  }
+  .nav-toggle{ display:none; }
+
+  @media (max-width: 760px){
+    nav.links{
+      display:none;
+    }
+    .nav-toggle{
+      display:block;
+      background:none;
+      border:1px solid var(--line);
+      padding: 8px 12px;
+      font-family:'IBM Plex Sans',sans-serif;
+      font-size:0.85rem;
+      cursor:pointer;
+      color: var(--ink);
+    }
+    nav.links.open{
+      display:flex;
+      flex-direction:column;
+      position:absolute;
+      right:20px;
+      top:64px;
+      background: var(--paper);
+      border:1px solid var(--line);
+      padding: 14px 18px;
+      gap: 14px;
+    }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding: 88px 0 64px;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 56px;
+    align-items:end;
+  }
+  .hero h1{
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    line-height: 1.05;
+  }
+  .hero .kicker{
+    font-size: 0.95rem;
+    color: var(--oxblood);
+    margin-bottom: 18px;
+    display:flex;
+    align-items:center;
+    gap: 10px;
+  }
+  .hero .kicker::before{
+    content:"";
+    width: 28px;
+    height: 1px;
+    background: var(--oxblood);
+    display:inline-block;
+  }
+  .hero p.lede{
+    margin-top: 22px;
+    font-size: 1.1rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+  }
+  .hero-side{
+    border-left: 1px solid var(--line);
+    padding-left: 32px;
+  }
+  .hero-side .stat{
+    font-family:'Fraunces',serif;
+    font-size: 2.4rem;
+    color: var(--oxblood);
+    line-height:1;
+  }
+  .hero-side .stat + p{
+    margin: 8px 0 24px;
+    font-size: 0.92rem;
+    color: var(--ink-soft);
+  }
+  .cta-row{
+    margin-top: 32px;
+    display:flex;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .btn{
+    display:inline-block;
+    padding: 13px 26px;
+    font-size: 0.95rem;
+    text-decoration:none;
+    border: 1px solid var(--ink);
+    transition: background .15s ease, color .15s ease;
+  }
+  .btn.primary{
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .btn.primary:hover{
+    background: var(--oxblood);
+    border-color: var(--oxblood);
+  }
+  .btn.ghost:hover{
+    background: var(--ink);
+    color: var(--paper);
+  }
+
+  @media (max-width: 760px){
+    .hero-grid{ grid-template-columns: 1fr; }
+    .hero-side{
+      border-left:none;
+      padding-left:0;
+      border-top: 1px solid var(--line);
+      padding-top: 24px;
+    }
+  }
+
+  /* ---------- Section shell ---------- */
+  section{
+    padding: 72px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  section:last-of-type{ border-bottom:none; }
+
+  .section-head{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 24px;
+    margin-bottom: 44px;
+  }
+  .section-head h2{
+    font-size: 2rem;
+  }
+  .section-head .note{
+    color: var(--ink-soft);
+    font-size: 0.95rem;
+    max-width: 34ch;
+    text-align:right;
+  }
+  @media (max-width: 700px){
+    .section-head{ flex-direction:column; align-items:flex-start; }
+    .section-head .note{ text-align:left; }
+  }
+
+  /* ---------- About ---------- */
+  .about-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .about-grid p{ color: var(--ink-soft); }
+  .about-grid .lead{
+    font-family:'Fraunces',serif;
+    font-size: 1.3rem;
+    color: var(--ink);
+    line-height: 1.5;
+  }
+  .pillars{
+    list-style:none;
+    margin: 28px 0 0;
+    padding:0;
+  }
+  .pillars li{
+    padding: 16px 0;
+    border-top: 1px solid var(--line);
+    display:grid;
+    grid-template-columns: 90px 1fr;
+    gap: 18px;
+  }
+  .pillars li:last-child{ border-bottom: 1px solid var(--line); }
+  .pillars .tag{
+    color: var(--brass);
+    font-family:'Fraunces',serif;
+    font-size: 0.95rem;
+  }
+  .pillars strong{ display:block; margin-bottom: 4px; }
+  .pillars span.desc{ color: var(--ink-soft); font-size: 0.95rem; }
+
+  @media (max-width: 700px){
+    .about-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Docket (events) ---------- */
+  .docket{
+    display:flex;
+    flex-direction:column;
+  }
+  .docket-row{
+    display:grid;
+    grid-template-columns: 130px 1fr 160px;
+    gap: 24px;
+    align-items:start;
+    padding: 24px 0;
+    border-top: 1px solid var(--line);
+  }
+  .docket-row:last-child{ border-bottom: 1px solid var(--line); }
+  .docket-date{
+    font-family:'Fraunces',serif;
+    color: var(--oxblood);
+    font-size: 1.05rem;
+  }
+  .docket-date span{
+    display:block;
+    color: var(--ink-soft);
+    font-family:'IBM Plex Sans',sans-serif;
+    font-size: 0.82rem;
+    margin-top: 2px;
+  }
+  .docket-title{ font-weight:600; margin-bottom: 6px; }
+  .docket-desc{ color: var(--ink-soft); font-size: 0.95rem; }
+  .docket-loc{
+    color: var(--ink-soft);
+    font-size: 0.88rem;
+    text-align:right;
+  }
+  @media (max-width: 700px){
+    .docket-row{ grid-template-columns: 1fr; gap: 6px; }
+    .docket-loc{ text-align:left; }
+  }
+
+  /* ---------- Board ---------- */
+  .board-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-left: 1px solid var(--line);
+  }
+  .board-card{
+    border-right: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    padding: 28px 24px;
+  }
+  .board-photo{
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(160deg, var(--ink) 0%, var(--oxblood-deep) 100%);
+    margin-bottom: 18px;
+  }
+  .board-card h3{
+    font-size: 1.05rem;
+    margin-bottom: 4px;
+  }
+  .board-role{
+    color: var(--brass);
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+  }
+  .board-bio{ color: var(--ink-soft); font-size: 0.9rem; }
+
+  @media (max-width: 900px){
+    .board-grid{ grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (max-width: 600px){
+    .board-grid{ grid-template-columns: 1fr; }
+  }
+
+  /* ---------- Join ---------- */
+  .join{
+    background: var(--ink);
+    color: var(--paper);
+    border-bottom:none;
+  }
+  .join .section-head .note{ color: rgba(250,247,239,0.65); }
+  .join h2{ color: var(--paper); }
+  .join-grid{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+    align-items:start;
+  }
+  .join p{ color: rgba(250,247,239,0.72); }
+  form{
+    display:flex;
+    flex-direction:column;
+    gap: 18px;
+  }
+  label{
+    font-size: 0.85rem;
+    color: rgba(250,247,239,0.65);
+    margin-bottom: 6px;
+    display:block;
+  }
+  input, select, textarea{
+    width:100%;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid rgba(250,247,239,0.3);
+    color: var(--paper);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1rem;
+    padding: 10px 0;
+    outline:none;
+  }
+  input:focus, select:focus, textarea:focus{
+    border-color: var(--brass);
+  }
+  textarea{ resize: vertical; min-height: 70px; }
+  form .btn{
+    align-self:flex-start;
+    border-color: var(--paper);
+    color: var(--paper);
+    background: transparent;
+    margin-top: 8px;
+  }
+  form .btn:hover{
+    background: var(--paper);
+    color: var(--ink);
+  }
+  select option{ color: var(--ink); }
+
+  /* ---------- Footer ---------- */
+  footer{
+    background: var(--ink);
+    color: rgba(250,247,239,0.55);
+    padding: 32px 0 40px;
+    font-size: 0.85rem;
+  }
+  footer .wrap{
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  footer a{ color: rgba(250,247,239,0.75); text-decoration:none; }
+  footer a:hover{ color: var(--paper); }
+
+  :focus-visible{
+    outline: 2px solid var(--brass);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav">
+    <div class="brand"><span class="mark">§</span> Women in Law Society</div>
+    <nav class="links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#board">Board</a>
+      <a href="#join">Join</a>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-expanded="false">Menu</button>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="kicker">Georgetown University</div>
+      <h1>Women preparing to argue, negotiate, and lead in law.</h1>
+      <p class="lede">We're a community of Georgetown undergraduates pursuing careers in law — through mentorship with alumnae and practitioners, pre-law skill-building, and a network that starts before law school does.</p>
+      <div class="cta-row">
+        <a href="#join" class="btn primary">Become a member</a>
+        <a href="#events" class="btn ghost">See what's next</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="stat">120+</div>
+      <p>members across all four undergraduate class years</p>
+      <div class="stat">30+</div>
+      <p>alumnae and practitioner mentors in our network</p>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>What we're building</h2>
+      <p class="note">A club for anyone who wants a career in law and wants to stop guessing how to get one.</p>
+    </div>
+    <div class="about-grid">
+      <p class="lead">The path into law school and legal careers isn't taught in any one class — it's passed down, often informally, and often not to everyone equally. We exist to close that gap.</p>
+      <div>
+        <p>Founded by students who wanted better answers than they were getting, Women in Law Society gives Georgetown undergraduates direct access to the people and information that usually take years to find on your own.</p>
+        <ul class="pillars">
+          <li>
+            <span class="tag">01</span>
+            <div><strong>Mentorship</strong><span class="desc">Paired guidance from law students and practicing attorneys, from first-year through application season.</span></div>
+          </li>
+          <li>
+            <span class="tag">02</span>
+            <div><strong>Skill-building</strong><span class="desc">LSAT strategy sessions, mock cold calls, and workshops on writing a personal statement that isn't generic.</span></div>
+          </li>
+          <li>
+            <span class="tag">03</span>
+            <div><strong>Advocacy</strong><span class="desc">Speaker events and panels on the barriers women still face in the legal profession — and what's changing.</span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="events">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Upcoming on the docket</h2>
+      <p class="note">Open to all members unless noted. New events posted at the start of each month.</p>
+    </div>
+    <div class="docket">
+      <div class="docket-row">
+        <div class="docket-date">Sep 24<span>Wednesday, 6:30 PM</span></div>
+        <div>
+          <div class="docket-title">General Body Meeting + Fall Kickoff</div>
+          <div class="docket-desc">Semester overview, committee sign-ups, and an intro to this year's mentorship cohort.</div>
+        </div>
+        <div class="docket-loc">Healy Hall, Rm 106</div>
+      </div>
+      <div class="docket-row">
+        <div class="docket-date">Oct 8<span>Wednesday, 7:00 PM</span></div>
+        <div>
+          <div class="docket-title">Panel: Life After 1L</div>
+          <div class="docket-desc">Georgetown Law students on what actually changes once you get there — and what to do now to prepare.</div>
+        </div>
+        <div class="docket-loc">ICC Auditorium</div>
+      </div>
+      <div class="docket-row">
+        <div class="docket-date">Oct 22<span>Wednesday, 6:30 PM</span></div>
+        <div>
+          <div class="docket-title">LSAT Workshop: Logic Games</div>
+          <div class="docket-desc">Small-group problem sets led by members who've hit their target scores.</div>
+        </div>
+        <div class="docket-loc">Lauinger Library, Rm 390</div>
+      </div>
+      <div class="docket-row">
+        <div class="docket-date">Nov 12<span>Thursday, 6:00 PM</span></div>
+        <div>
+          <div class="docket-title">Mock Cold Call Night</div>
+          <div class="docket-desc">Practice the Socratic method in a low-stakes room before you meet it for real.</div>
+        </div>
+        <div class="docket-loc">White-Gravenor, Rm 201</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="board">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Executive board</h2>
+      <p class="note">Reach any of us directly, or use the general contact form below.</p>
+    </div>
+    <div class="board-grid">
+      <div class="board-card">
+        <div class="board-photo"></div>
+        <h3>President</h3>
+        <div class="board-role">Name — Class Year</div>
+        <div class="board-bio">Oversees strategy, partnerships, and the mentorship program.</div>
+      </div>
+      <div class="board-card">
+        <div class="board-photo"></div>
+        <h3>Vice President</h3>
+        <div class="board-role">Name — Class Year</div>
+        <div class="board-bio">Runs internal operations and coordinates committee leads.</div>
+      </div>
+      <div class="board-card">
+        <div class="board-photo"></div>
+        <h3>Director of Mentorship</h3>
+        <div class="board-role">Name — Class Year</div>
+        <div class="board-bio">Matches members with alumnae and practitioner mentors.</div>
+      </div>
+      <div class="board-card">
+        <div class="board-photo"></div>
+        <h3>Director of Events</h3>
+        <div class="board-role">Name — Class Year</div>
+        <div class="board-bio">Plans panels, workshops, and the annual speaker series.</div>
+      </div>
+      <div class="board-card">
+        <div class="board-photo"></div>
+        <h3>Treasurer</h3>
+        <div class="board-role">Name — Class Year</div>
+        <div class="board-bio">Manages budget, funding requests, and reimbursements.</div>
+      </div>
+      <div class="board-card">
+        <div class="board-photo"></div>
+        <h3>Director of Communications</h3>
+        <div class="board-role">Name — Class Year</div>
+        <div class="board-bio">Runs outreach, social media, and this website.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="join" class="join">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Join Women in Law Society</h2>
+      <p class="note">Open to all Georgetown undergraduates — no prior pre-law experience required.</p>
+    </div>
+    <div class="join-grid">
+      <p>Fill out the form and we'll add you to our newsletter and GroupMe, and reach out about our next general body meeting. Membership is free.</p>
+      <form id="joinForm">
+        <div>
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required>
+        </div>
+        <div>
+          <label for="email">Georgetown email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+        <div>
+          <label for="year">Class year</label>
+          <select id="year" name="year">
+            <option>2030</option>
+            <option>2029</option>
+            <option>2028</option>
+            <option>2027</option>
+          </select>
+        </div>
+        <div>
+          <label for="interest">What are you most interested in?</label>
+          <textarea id="interest" name="interest" placeholder="Mentorship, LSAT prep, speaker events, committee work..."></textarea>
+        </div>
+        <button type="submit" class="btn">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="year"></span> Women in Law Society, Georgetown University</div>
+    <div><a href="mailto:wils@georgetown.edu">wils@georgetown.edu</a></div>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  const joinForm = document.getElementById('joinForm');
+  joinForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    joinForm.innerHTML = '<p style="color: rgba(250,247,239,0.85); font-family: \'Fraunces\', serif; font-size: 1.2rem;">Thanks — you\'re on the list. Watch your inbox for the next meeting.</p>';
+  });
+</script>
+
+</body>
+</html>
